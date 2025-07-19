@@ -1,0 +1,1278 @@
+2025-07-18 15:18:35,375 - INFO - Fetching all orders
+2025-07-18 15:18:35,761 - INFO - select pg_catalog.version()
+2025-07-18 15:18:35,763 - INFO - [raw sql] ()
+2025-07-18 15:18:35,780 - INFO - select current_schema()
+2025-07-18 15:18:35,781 - INFO - [raw sql] ()
+2025-07-18 15:18:35,784 - INFO - show standard_conforming_strings
+2025-07-18 15:18:35,785 - INFO - [raw sql] ()
+2025-07-18 15:18:35,794 - INFO - BEGIN (implicit)
+2025-07-18 15:18:35,825 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 15:18:35,826 - INFO - [generated in 0.00116s] ()
+2025-07-18 15:18:35,845 - INFO - ROLLBACK
+2025-07-18 15:20:22,213 - INFO - Creating order
+2025-07-18 15:20:24,328 - INFO - HTTP Request: GET http://localhost:8000/users/1 "HTTP/1.1 404 Not Found"
+2025-07-18 15:20:35,436 - INFO - Creating order
+2025-07-18 15:20:36,163 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 17:50:34,081 - INFO - Fetching all orders
+2025-07-18 17:50:34,945 - INFO - select pg_catalog.version()
+2025-07-18 17:50:34,947 - INFO - [raw sql] ()
+2025-07-18 17:50:34,958 - INFO - select current_schema()
+2025-07-18 17:50:34,964 - INFO - [raw sql] ()
+2025-07-18 17:50:34,973 - INFO - show standard_conforming_strings
+2025-07-18 17:50:34,983 - INFO - [raw sql] ()
+2025-07-18 17:50:34,987 - INFO - BEGIN (implicit)
+2025-07-18 17:50:35,020 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 17:50:35,052 - INFO - [generated in 0.03048s] ()
+2025-07-18 17:50:35,103 - INFO - ROLLBACK
+2025-07-18 17:53:19,875 - INFO - Updating order 1
+2025-07-18 17:53:19,880 - ERROR - Unhandled exception: 'OrderUpdate' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 42, in update
+    if order.user_id is not None:
+       ^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OrderUpdate' object has no attribute 'user_id'
+2025-07-18 17:53:26,460 - INFO - Updating order 1
+2025-07-18 17:53:26,463 - ERROR - Unhandled exception: 'OrderUpdate' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 42, in update
+    if order.user_id is not None:
+       ^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OrderUpdate' object has no attribute 'user_id'
+2025-07-18 17:57:30,283 - INFO - Fetching all orders
+2025-07-18 17:57:30,283 - INFO - BEGIN (implicit)
+2025-07-18 17:57:30,283 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 17:57:30,283 - INFO - [cached since 415.3s ago] ()
+2025-07-18 17:57:30,294 - INFO - ROLLBACK
+2025-07-18 17:57:36,974 - INFO - Creating order
+2025-07-18 17:57:36,975 - ERROR - Unhandled exception: invalid literal for int() with base 10: 'shamil@gmail.com'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user["user_id"])
+                    ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'shamil@gmail.com'
+2025-07-18 17:57:57,449 - INFO - Creating order
+2025-07-18 17:57:57,454 - ERROR - Unhandled exception: invalid literal for int() with base 10: 'shamil@gmail.com'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user["user_id"])
+                    ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'shamil@gmail.com'
+2025-07-18 17:58:48,495 - INFO - Creating order
+2025-07-18 17:58:48,497 - ERROR - Unhandled exception: invalid literal for int() with base 10: 'shamil@gmail.com'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user["user_id"])
+                    ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'shamil@gmail.com'
+2025-07-18 18:00:16,773 - INFO - Creating order
+2025-07-18 18:00:16,775 - ERROR - Unhandled exception: int() argument must be a string, a bytes-like object or a real number, not 'dict'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user_id)
+                    ^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'dict'
+2025-07-18 18:00:19,139 - INFO - Creating order
+2025-07-18 18:00:19,139 - ERROR - Unhandled exception: int() argument must be a string, a bytes-like object or a real number, not 'dict'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user_id)
+                    ^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'dict'
+2025-07-18 18:00:48,896 - INFO - Creating order
+2025-07-18 18:00:48,898 - ERROR - Unhandled exception: 'dict' object has no attribute 'value'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = user_id.value()
+                    ^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'value'. Did you mean: 'values'?
+2025-07-18 18:00:58,329 - INFO - Creating order
+2025-07-18 18:00:58,330 - INFO - Making GET request to http://localhost:8001/items/1
+2025-07-18 18:00:59,510 - INFO - HTTP Request: GET http://localhost:8001/items/1 "HTTP/1.1 200 OK"
+2025-07-18 18:00:59,803 - INFO - select pg_catalog.version()
+2025-07-18 18:00:59,803 - INFO - [raw sql] ()
+2025-07-18 18:00:59,810 - INFO - select current_schema()
+2025-07-18 18:00:59,810 - INFO - [raw sql] ()
+2025-07-18 18:00:59,810 - INFO - show standard_conforming_strings
+2025-07-18 18:00:59,820 - INFO - [raw sql] ()
+2025-07-18 18:00:59,830 - INFO - BEGIN (implicit)
+2025-07-18 18:00:59,845 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 18:00:59,866 - INFO - [generated in 0.02224s] (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')
+2025-07-18 18:00:59,882 - INFO - ROLLBACK
+2025-07-18 18:00:59,882 - ERROR - Unhandled exception: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+[SQL: INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id]
+[parameters: (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/int.pyx", line 54, in asyncpg.pgproto.pgproto.int4_encode
+TypeError: 'dict_values' object cannot be interpreted as an integer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 545, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 267, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 256, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 22, in create
+    return await create_order(db, order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\crud\order.py", line 9, in create_order
+    await db.commit()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 1014, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+[SQL: INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id]
+[parameters: (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-07-18 18:03:06,617 - INFO - Creating order
+2025-07-18 18:03:06,618 - INFO - Making GET request to http://localhost:8001/items/1
+2025-07-18 18:03:07,443 - INFO - HTTP Request: GET http://localhost:8001/items/1 "HTTP/1.1 200 OK"
+2025-07-18 18:03:07,703 - INFO - select pg_catalog.version()
+2025-07-18 18:03:07,703 - INFO - [raw sql] ()
+2025-07-18 18:03:07,708 - INFO - select current_schema()
+2025-07-18 18:03:07,709 - INFO - [raw sql] ()
+2025-07-18 18:03:07,714 - INFO - show standard_conforming_strings
+2025-07-18 18:03:07,717 - INFO - [raw sql] ()
+2025-07-18 18:03:07,719 - INFO - BEGIN (implicit)
+2025-07-18 18:03:07,722 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 18:03:07,724 - INFO - [generated in 0.00155s] (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')
+2025-07-18 18:03:07,733 - INFO - ROLLBACK
+2025-07-18 18:03:07,737 - ERROR - Unhandled exception: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+[SQL: INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id]
+[parameters: (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg\\pgproto\\./codecs/int.pyx", line 54, in asyncpg.pgproto.pgproto.int4_encode
+TypeError: 'dict_values' object cannot be interpreted as an integer
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 545, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 267, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\asyncpg\prepared_stmt.py", line 256, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 23, in create
+    return await create_order(db, order)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\crud\order.py", line 9, in create_order
+    await db.commit()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\ext\asyncio\session.py", line 1014, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 580, in execute
+    self._adapt_connection.await_(
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\util\_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 558, in _prepare_and_execute
+    self._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 508, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\sqlalchemy\dialects\postgresql\asyncpg.py", line 792, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: dict_values(['shamil@gmail.com']) ('dict_values' object cannot be interpreted as an integer)
+[SQL: INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id]
+[parameters: (dict_values(['shamil@gmail.com']), 1, 2, 10.0, 'pending')]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2025-07-18 18:09:19,348 - INFO - Creating order
+2025-07-18 18:09:19,350 - ERROR - Unhandled exception: invalid literal for int() with base 10: 'shamil@gmail.com'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user["user_id"])
+                    ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'shamil@gmail.com'
+2025-07-18 18:16:07,644 - INFO - Creating order
+2025-07-18 18:16:07,647 - ERROR - Unhandled exception: invalid literal for int() with base 10: 'shamil@gmail.com'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 16, in create
+    order.user_id = int(user["user_id"])
+                    ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'shamil@gmail.com'
+2025-07-18 19:21:35,038 - ERROR - Unhandled exception: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 292, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\auth\jwt_handler.py", line 21, in get_current_user
+    raise "Could not validate"
+TypeError: exceptions must derive from BaseException
+2025-07-18 19:21:37,511 - ERROR - Unhandled exception: exceptions must derive from BaseException
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 292, in app
+    solved_result = await solve_dependencies(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\dependencies\utils.py", line 638, in solve_dependencies
+    solved = await call(**solved_result.values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\auth\jwt_handler.py", line 21, in get_current_user
+    raise "Could not validate"
+TypeError: exceptions must derive from BaseException
+2025-07-18 19:32:49,511 - INFO - Creating order
+2025-07-18 19:32:49,525 - INFO - Making GET request to http://localhost:8001/items/1
+2025-07-18 19:32:50,616 - INFO - HTTP Request: GET http://localhost:8001/items/1 "HTTP/1.1 200 OK"
+2025-07-18 19:32:50,771 - INFO - select pg_catalog.version()
+2025-07-18 19:32:50,772 - INFO - [raw sql] ()
+2025-07-18 19:32:50,778 - INFO - select current_schema()
+2025-07-18 19:32:50,779 - INFO - [raw sql] ()
+2025-07-18 19:32:50,782 - INFO - show standard_conforming_strings
+2025-07-18 19:32:50,783 - INFO - [raw sql] ()
+2025-07-18 19:32:50,792 - INFO - BEGIN (implicit)
+2025-07-18 19:32:50,800 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 19:32:50,801 - INFO - [generated in 0.00112s] (2, 1, 2, 10.0, 'pending')
+2025-07-18 19:32:50,816 - INFO - COMMIT
+2025-07-18 19:32:50,820 - INFO - BEGIN (implicit)
+2025-07-18 19:32:50,827 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders 
+WHERE orders.id = $1::INTEGER
+2025-07-18 19:32:50,829 - INFO - [generated in 0.00208s] (1,)
+2025-07-18 19:32:50,922 - INFO - ROLLBACK
+2025-07-18 19:34:35,411 - INFO - Fetching all orders
+2025-07-18 19:34:35,411 - INFO - BEGIN (implicit)
+2025-07-18 19:34:35,414 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 19:34:35,415 - INFO - [generated in 0.00110s] ()
+2025-07-18 19:34:35,765 - INFO - ROLLBACK
+2025-07-18 19:35:03,672 - INFO - Fetching all orders
+2025-07-18 19:35:03,673 - INFO - BEGIN (implicit)
+2025-07-18 19:35:03,674 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 19:35:03,675 - INFO - [cached since 28.26s ago] ()
+2025-07-18 19:35:03,680 - INFO - ROLLBACK
+2025-07-18 19:35:38,382 - INFO - Creating order
+2025-07-18 19:35:38,382 - INFO - Making GET request to http://localhost:8001/items/2
+2025-07-18 19:35:39,032 - INFO - HTTP Request: GET http://localhost:8001/items/2 "HTTP/1.1 200 OK"
+2025-07-18 19:35:39,034 - INFO - BEGIN (implicit)
+2025-07-18 19:35:39,035 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 19:35:39,036 - INFO - [cached since 168.2s ago] (2, 2, 3, 150.0, 'pending')
+2025-07-18 19:35:39,038 - INFO - COMMIT
+2025-07-18 19:35:39,044 - INFO - BEGIN (implicit)
+2025-07-18 19:35:39,046 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders 
+WHERE orders.id = $1::INTEGER
+2025-07-18 19:35:39,046 - INFO - [cached since 168.2s ago] (2,)
+2025-07-18 19:35:39,048 - INFO - ROLLBACK
+2025-07-18 19:35:44,132 - INFO - Creating order
+2025-07-18 19:35:44,133 - INFO - Making GET request to http://localhost:8001/items/2
+2025-07-18 19:35:44,947 - INFO - HTTP Request: GET http://localhost:8001/items/2 "HTTP/1.1 200 OK"
+2025-07-18 19:35:44,949 - INFO - BEGIN (implicit)
+2025-07-18 19:35:44,950 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 19:35:44,951 - INFO - [cached since 174.2s ago] (2, 2, 3, 150.0, 'pending')
+2025-07-18 19:35:44,953 - INFO - COMMIT
+2025-07-18 19:35:44,958 - INFO - BEGIN (implicit)
+2025-07-18 19:35:44,961 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders 
+WHERE orders.id = $1::INTEGER
+2025-07-18 19:35:44,962 - INFO - [cached since 174.1s ago] (3,)
+2025-07-18 19:35:44,964 - INFO - ROLLBACK
+2025-07-18 19:35:49,943 - INFO - Fetching all orders
+2025-07-18 19:35:49,943 - INFO - BEGIN (implicit)
+2025-07-18 19:35:49,944 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 19:35:49,944 - INFO - [cached since 74.53s ago] ()
+2025-07-18 19:35:49,946 - INFO - ROLLBACK
+2025-07-18 19:38:11,136 - INFO - Fetching all orders
+2025-07-18 19:38:11,289 - INFO - select pg_catalog.version()
+2025-07-18 19:38:11,290 - INFO - [raw sql] ()
+2025-07-18 19:38:11,296 - INFO - select current_schema()
+2025-07-18 19:38:11,296 - INFO - [raw sql] ()
+2025-07-18 19:38:11,300 - INFO - show standard_conforming_strings
+2025-07-18 19:38:11,300 - INFO - [raw sql] ()
+2025-07-18 19:38:11,302 - INFO - BEGIN (implicit)
+2025-07-18 19:38:11,313 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders
+2025-07-18 19:38:11,367 - INFO - [generated in 0.05441s] ()
+2025-07-18 19:38:11,383 - INFO - ROLLBACK
+2025-07-18 19:38:14,321 - INFO - Creating order
+2025-07-18 19:38:14,321 - INFO - Making GET request to http://localhost:8001/items/2
+2025-07-18 19:38:15,186 - INFO - HTTP Request: GET http://localhost:8001/items/2 "HTTP/1.1 200 OK"
+2025-07-18 19:38:15,193 - INFO - BEGIN (implicit)
+2025-07-18 19:38:15,199 - INFO - INSERT INTO orders (user_id, item_id, quantity, total_price, status) VALUES ($1::INTEGER, $2::INTEGER, $3::INTEGER, $4::FLOAT, $5::VARCHAR) RETURNING orders.id
+2025-07-18 19:38:15,201 - INFO - [generated in 0.00131s] (2, 2, 3, 150.0, 'pending')
+2025-07-18 19:38:15,206 - INFO - COMMIT
+2025-07-18 19:38:15,215 - INFO - BEGIN (implicit)
+2025-07-18 19:38:15,219 - INFO - SELECT orders.id, orders.user_id, orders.item_id, orders.quantity, orders.total_price, orders.status 
+FROM orders 
+WHERE orders.id = $1::INTEGER
+2025-07-18 19:38:15,220 - INFO - [generated in 0.00105s] (4,)
+2025-07-18 19:38:15,229 - INFO - ROLLBACK
+2025-07-18 19:39:19,719 - INFO - Updating order 1
+2025-07-18 19:39:19,720 - ERROR - Unhandled exception: 'OrderUpdate' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 43, in update
+    if order.user_id is not None:
+       ^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OrderUpdate' object has no attribute 'user_id'
+2025-07-18 19:39:25,743 - INFO - Updating order 3
+2025-07-18 19:39:25,744 - ERROR - Unhandled exception: 'OrderUpdate' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 43, in update
+    if order.user_id is not None:
+       ^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OrderUpdate' object has no attribute 'user_id'
+2025-07-18 19:41:05,490 - INFO - Updating order 3
+2025-07-18 19:41:05,491 - ERROR - Unhandled exception: 'OrderUpdate' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 151, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream from None
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\main.py", line 21, in prometheus_middleware
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 159, in call_next
+    raise app_exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 78, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\starlette\routing.py", line 75, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 302, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\fastapi\routing.py", line 213, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\order_service\app\routers\order.py", line 43, in update
+    if order.user_id is not None:
+       ^^^^^^^^^^^^^
+  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\pydantic\main.py", line 991, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'OrderUpdate' object has no attribute 'user_id'
+2025-07-18 19:42:26,320 - INFO - Updating order 3
+2025-07-18 19:42:26,321 - INFO - Making GET request to http://localhost:8000/users/1
+2025-07-18 19:42:27,146 - INFO - HTTP Request: GET http://localhost:8000/users/1 "HTTP/1.1 404 Not Found"
+2025-07-18 19:42:29,165 - INFO - Making GET request to http://localhost:8000/users/1
+2025-07-18 19:42:29,770 - INFO - HTTP Request: GET http://localhost:8000/users/1 "HTTP/1.1 404 Not Found"
+2025-07-18 19:42:31,777 - INFO - Making GET request to http://localhost:8000/users/1
+2025-07-18 19:42:32,680 - INFO - HTTP Request: GET http://localhost:8000/users/1 "HTTP/1.1 404 Not Found"
+2025-07-18 19:42:40,855 - INFO - Updating order 3
+2025-07-18 19:42:40,856 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:42:41,583 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 19:42:43,591 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:42:44,647 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 19:42:46,642 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:42:47,536 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 19:54:38,360 - INFO - Updating order 3
+2025-07-18 19:54:38,360 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:54:39,237 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 19:54:41,241 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:54:41,847 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"
+2025-07-18 19:54:43,844 - INFO - Making GET request to http://localhost:8000/users/2
+2025-07-18 19:54:44,726 - INFO - HTTP Request: GET http://localhost:8000/users/2 "HTTP/1.1 404 Not Found"

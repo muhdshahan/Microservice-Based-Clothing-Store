@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.database import get_db
 from app.schemas.order import OrderCreate, OrderOut, OrderUpdate
@@ -12,13 +12,14 @@ router = APIRouter(prefix="/orders", tags=["Orders"])
 @router.post("/", response_model=OrderOut)
 async def create(order: OrderCreate, db: AsyncSession = Depends(get_db), user=Depends(get_current_user)):
     logger.info("Creating order")
-    # 1. Validate user
-    await get_user_by_id(order.user_id)
+    # Use the authenticated user's ID
+    order.user_id = int(user["user_id"])
     
     # 2. Validate item
     await get_item_by_id(order.item_id)
     
     # 3. Create order
+    print(db, order, "hi")
     return await create_order(db, order)
 
 @router.get("/", response_model=list[OrderOut])

@@ -11,6 +11,7 @@ class UserBase(BaseModel):
     
 class UserCreate(UserBase):
     password: str
+    role: str = "user"  # default role
     
 class UserOut(UserBase):
     id: int 

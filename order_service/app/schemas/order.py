@@ -10,12 +10,12 @@ class OrderBase(BaseModel):
 class OrderCreate(OrderBase):
     pass
 
-class OrderUpdate(BaseModel):
+class OrderUpdate(OrderBase):
     quantity: int | None = None
     status: str | None = None
 
 class OrderOut(OrderBase):
-    id: int
+    id: int 
 
     class Config:
         orm_mode = True

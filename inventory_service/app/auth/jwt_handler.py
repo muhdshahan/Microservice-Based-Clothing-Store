@@ -12,8 +12,6 @@ load_dotenv()
 # Environment variables
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
-
 # Token URL for Swagger docs (e.g., users service endpoint)
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/users/login")
 
@@ -34,23 +32,9 @@ async def get_current_user(
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         email: str = payload.get("sub")
-        if email is None:
+        role: str = payload.get("role")
+        if email is None or role is None:
             raise credentials_exception
+        return {"email": email, "role": role}
     except JWTError:
         raise credentials_exception
-
-    # Optional: if you need to fetch full user info
-    user = await get_user_by_email(db, email=email)
-    if user is None:
-        raise credentials_exception
-    return user
-
-def create_access_token(data: dict):
-    """
-    Encodes and returns a JWT token with expiration.
-    """
-    to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
-    return encoded_jwt

@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
 
-oauth2_scheme = OAuth2PasswordBearer(token_url="/users/login")
+oauth2_scheme = OAuth2PasswordBearer("/users/login")
 
 async def get_current_user(token: str = Depends(oauth2_scheme), db: AsyncSession = Depends(get_db)):
     credentials_exception = HTTPException(
@@ -28,13 +28,15 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: AsyncSession
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         email: str = payload.get("sub")
-        if email is None:
+        role: str = payload.get("role")  # Extract role
+        if email is None or role is None:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
     user = await get_user_by_email(db, email=email)
     if user is None:
         raise credentials_exception
+    # user.role = role
     return user
 
 def create_access_token(data: dict):

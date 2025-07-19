@@ -17,7 +17,8 @@ async def create_user(db: AsyncSession, user: UserCreate):
     new_user = User(
         username = user.username,
         email = user.email,
-        password = hashed_password
+        hashed_password = hashed_password,
+        role=user.role 
     )
     db.add(new_user)
     await db.commit()
@@ -26,10 +27,15 @@ async def create_user(db: AsyncSession, user: UserCreate):
 
 async def verify_user(db: AsyncSession, email: str, password: str):
     user = await get_user_by_email(db, email)
-    if user and pwd_context.verify(password, user.password):
+    print("hello",user)
+    if user and pwd_context.verify(password, user.hashed_password):
         return user
     return None
 
 async def get_users(db: AsyncSession):
     result = await db.execute(select(User))
     return result.scalars().all()
+
+async def get_a_user(db: AsyncSession, userid: int):
+    result = await db.execute(select(User).where(id == userid))
+    return result
