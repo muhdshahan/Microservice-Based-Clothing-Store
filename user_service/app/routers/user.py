@@ -32,10 +32,15 @@ async def create_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
     return new_user
 
 @router.get("/",response_model=list[UserOut])
-async def read_users(db: AsyncSession = Depends(get_db)):
+async def read_users(db: AsyncSession = Depends(get_db), user = Depends(get_current_user)):
+    if user.role == "user":
+        raise HTTPException(status_code=401, detail="Unauthorized")
     return await crud_user.get_users(db)
 
+
 @router.get("/{user_id}", response_model=UserOut)
-async def read_a_user(user_id: int, db: AsyncSession = Depends(get_db)):
+async def read_a_user(user_id: int, db: AsyncSession = Depends(get_db), user = Depends(get_current_user)):
+    if user.role == "user":
+        raise HTTPException(status_code=401, detail="Unauthorized")
     return await crud_user.get_a_user(db, user_id)
  

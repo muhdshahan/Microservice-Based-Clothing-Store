@@ -53,7 +53,7 @@ async def get_user_by_id(user_id: int):
         "GET",
         USER_SERVICE_URL,
         f"/users/{user_id}"
-    )
+    ) 
     
     if response.status_code == 404:
         raise HTTPException(
@@ -89,3 +89,45 @@ async def get_item_by_id(item_id: int):
         )
     
     return response.json()
+
+
+# Connection with inventory for checking the stock
+@retry(**RETRY_POLICY)
+async def check_item_availability(item_id: int) -> int:
+    """Check available quantity of an item"""
+    item = await get_item_by_id(item_id)
+    return item.get("quantity", 0)
+
+@retry(**RETRY_POLICY)
+async def reduce_inventory(item_id: int, qty: int):
+    """Reduce item quantity in inventory"""
+    response = await make_service_request(
+        "PUT",
+        INVENTORY_SERVICE_URL,
+        f"/items/{item_id}/decrease",
+        json={"qty": qty}
+    )
+
+    if response.status_code != 200:
+        logger.error(f"Failed to reduce inventory for item {item_id}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Failed to reduce inventory for item {item_id}"
+        )
+
+@retry(**RETRY_POLICY)
+async def increase_inventory(item_id: int, qty: int):
+    """Increase item quantity in inventory"""
+    response = await make_service_request(
+        "PUT",
+        INVENTORY_SERVICE_URL,
+        f"/items/{item_id}/increase",
+        json={"qty": qty}
+    )
+
+    if response.status_code != 200:
+        logger.error(f"Failed to increase inventory for item {item_id}")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Failed to increase inventory for item {item_id}"
+        )

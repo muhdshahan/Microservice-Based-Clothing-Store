@@ -1,336 +1,299 @@
-2025-07-18 10:39:53,059 [ERROR] Form data requires "python-multipart" to be installed. 
-You can install "python-multipart" with: 
-
-pip install python-multipart
-
-2025-07-18 10:39:55,325 [ERROR] Form data requires "python-multipart" to be installed. 
-You can install "python-multipart" with: 
-
-pip install python-multipart
-
-2025-07-18 10:43:00,007 [ERROR] Form data requires "python-multipart" to be installed. 
-You can install "python-multipart" with: 
-
-pip install python-multipart
-
-2025-07-18 10:52:54,037 [INFO] select pg_catalog.version()
-2025-07-18 10:52:54,037 [INFO] [raw sql] ()
-2025-07-18 10:52:54,037 [INFO] select current_schema()
-2025-07-18 10:52:54,037 [INFO] [raw sql] ()
-2025-07-18 10:52:54,037 [INFO] show standard_conforming_strings
-2025-07-18 10:52:54,053 [INFO] [raw sql] ()
-2025-07-18 10:52:54,056 [INFO] BEGIN (implicit)
-2025-07-18 10:52:54,061 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users
-2025-07-18 10:52:54,062 [INFO] [generated in 0.00091s] ()
-2025-07-18 10:52:54,187 [INFO] ROLLBACK
-2025-07-18 10:55:31,507 [INFO] BEGIN (implicit)
-2025-07-18 10:55:31,508 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users
-2025-07-18 10:55:31,509 [INFO] [cached since 157.4s ago] ()
-2025-07-18 10:55:31,517 [INFO] ROLLBACK
-2025-07-18 11:26:46,056 [INFO] BEGIN (implicit)
-2025-07-18 11:26:46,066 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users
-2025-07-18 11:26:46,069 [INFO] [cached since 2032s ago] ()
-2025-07-18 11:26:46,095 [INFO] ROLLBACK
-2025-07-18 11:31:41,781 [INFO] select pg_catalog.version()
-2025-07-18 11:31:41,781 [INFO] [raw sql] ()
-2025-07-18 11:31:41,789 [INFO] select current_schema()
-2025-07-18 11:31:41,790 [INFO] [raw sql] ()
-2025-07-18 11:31:41,802 [INFO] show standard_conforming_strings
-2025-07-18 11:31:41,802 [INFO] [raw sql] ()
-2025-07-18 11:31:41,805 [INFO] BEGIN (implicit)
-2025-07-18 11:31:41,820 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users
-2025-07-18 11:31:41,820 [INFO] [generated in 0.00166s] ()
-2025-07-18 11:31:41,845 [INFO] ROLLBACK
-2025-07-18 11:32:28,532 [INFO] BEGIN (implicit)
-2025-07-18 11:32:28,540 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
+2025-07-19 12:12:27,280 [INFO] select pg_catalog.version()
+2025-07-19 12:12:27,280 [INFO] [raw sql] ()
+2025-07-19 12:12:27,296 [INFO] select current_schema()
+2025-07-19 12:12:27,296 [INFO] [raw sql] ()
+2025-07-19 12:12:27,312 [INFO] show standard_conforming_strings
+2025-07-19 12:12:27,312 [INFO] [raw sql] ()
+2025-07-19 12:12:27,312 [INFO] BEGIN (implicit)
+2025-07-19 12:12:27,328 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
 FROM users 
 WHERE users.email = $1::VARCHAR
-2025-07-18 11:32:28,542 [INFO] [generated in 0.00217s] ('shan@gmail.com',)
-2025-07-18 11:32:28,563 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 11:32:29,422 [INFO] ROLLBACK
-2025-07-18 11:32:54,044 [INFO] BEGIN (implicit)
-2025-07-18 11:32:54,045 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
+2025-07-19 12:12:27,336 [INFO] [generated in 0.00109s] ('shan@gmail.com',)
+2025-07-19 12:12:28,123 [INFO] ROLLBACK
+2025-07-19 12:12:35,753 [INFO] BEGIN (implicit)
+2025-07-19 12:12:35,755 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
 FROM users 
 WHERE users.email = $1::VARCHAR
-2025-07-18 11:32:54,046 [INFO] [cached since 25.51s ago] ('shan@gmail.com',)
-2025-07-18 11:32:54,494 [INFO] ROLLBACK
-2025-07-18 11:44:23,550 [INFO] select pg_catalog.version()
-2025-07-18 11:44:23,560 [INFO] [raw sql] ()
-2025-07-18 11:44:23,561 [INFO] select current_schema()
-2025-07-18 11:44:23,561 [INFO] [raw sql] ()
-2025-07-18 11:44:23,568 [INFO] show standard_conforming_strings
-2025-07-18 11:44:23,571 [INFO] [raw sql] ()
-2025-07-18 11:44:23,571 [INFO] BEGIN (implicit)
-2025-07-18 11:44:23,592 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 11:44:23,603 [INFO] [generated in 0.01017s] ('shan@gmail.com',)
-2025-07-18 11:44:23,616 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 11:44:24,100 [INFO] INSERT INTO users (username, email, hashed_password, is_active) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN) RETURNING users.id, users.created_at
-2025-07-18 11:44:24,104 [INFO] [generated in 0.00146s] ('shahan', 'shan@gmail.com', '$2b$12$psCRJG9tnie7b6h/vtkD8.tbxcULVH4/JryqXfXDo/qUQRpqO01ui', True)
-2025-07-18 11:44:24,122 [INFO] COMMIT
-2025-07-18 11:44:24,135 [INFO] BEGIN (implicit)
-2025-07-18 11:44:24,142 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.id = $1::INTEGER
-2025-07-18 11:44:24,149 [INFO] [generated in 0.00719s] (1,)
-2025-07-18 11:44:24,152 [INFO] User created: shan@gmail.com
-2025-07-18 11:44:24,180 [INFO] ROLLBACK
-2025-07-18 11:47:58,018 [INFO] BEGIN (implicit)
-2025-07-18 11:47:58,021 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 11:47:58,023 [INFO] [cached since 214.4s ago] ('shahan',)
-2025-07-18 11:47:58,027 [INFO] ROLLBACK
-2025-07-18 11:48:32,672 [INFO] BEGIN (implicit)
-2025-07-18 11:48:32,673 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 11:48:32,675 [INFO] [cached since 249.1s ago] ('shahan',)
-2025-07-18 11:48:32,677 [INFO] ROLLBACK
-2025-07-18 11:50:07,469 [INFO] select pg_catalog.version()
-2025-07-18 11:50:07,470 [INFO] [raw sql] ()
-2025-07-18 11:50:07,474 [INFO] select current_schema()
-2025-07-18 11:50:07,478 [INFO] [raw sql] ()
-2025-07-18 11:50:07,484 [INFO] show standard_conforming_strings
-2025-07-18 11:50:07,484 [INFO] [raw sql] ()
-2025-07-18 11:50:07,487 [INFO] BEGIN (implicit)
-2025-07-18 11:50:07,496 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 11:50:07,501 [INFO] [generated in 0.00535s] ('shan@gmail.com',)
-2025-07-18 11:50:07,513 [INFO] ROLLBACK
-2025-07-18 11:50:51,591 [INFO] select pg_catalog.version()
-2025-07-18 11:50:51,591 [INFO] [raw sql] ()
-2025-07-18 11:50:51,591 [INFO] select current_schema()
-2025-07-18 11:50:51,598 [INFO] [raw sql] ()
-2025-07-18 11:50:51,600 [INFO] show standard_conforming_strings
-2025-07-18 11:50:51,606 [INFO] [raw sql] ()
-2025-07-18 11:50:51,610 [INFO] BEGIN (implicit)
-2025-07-18 11:50:51,624 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 11:50:51,624 [INFO] [generated in 0.00416s] ('shan@gmail.com',)
-2025-07-18 11:50:51,642 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 11:50:52,461 [INFO] ROLLBACK
-2025-07-18 14:46:37,306 [INFO] select pg_catalog.version()
-2025-07-18 14:46:37,310 [INFO] [raw sql] ()
-2025-07-18 14:46:37,317 [INFO] select current_schema()
-2025-07-18 14:46:37,318 [INFO] [raw sql] ()
-2025-07-18 14:46:37,324 [INFO] show standard_conforming_strings
-2025-07-18 14:46:37,326 [INFO] [raw sql] ()
-2025-07-18 14:46:37,329 [INFO] BEGIN (implicit)
-2025-07-18 14:46:37,337 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:46:37,339 [INFO] [generated in 0.00176s] ('shan@gmail.com',)
-2025-07-18 14:46:37,357 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 14:46:37,799 [INFO] INSERT INTO users (username, email, hashed_password, is_active, role) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, $5::VARCHAR) RETURNING users.id, users.created_at
-2025-07-18 14:46:37,800 [INFO] [generated in 0.00094s] ('shahan', 'shan@gmail.com', '$2b$12$wl6C88m7iC7CeqxXyk0Ss.VSEUdxmqzNvfLTT9xOWQ3wgs.1W1Tp2', True, 'admin')
-2025-07-18 14:46:37,823 [INFO] COMMIT
-2025-07-18 14:46:37,835 [INFO] BEGIN (implicit)
-2025-07-18 14:46:37,837 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.id = $1::INTEGER
-2025-07-18 14:46:37,845 [INFO] [generated in 0.00882s] (1,)
-2025-07-18 14:46:37,845 [INFO] User created: shan@gmail.com
-2025-07-18 14:46:37,966 [INFO] ROLLBACK
-2025-07-18 14:47:07,014 [INFO] BEGIN (implicit)
-2025-07-18 14:47:07,016 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users
-2025-07-18 14:47:07,016 [INFO] [generated in 0.00079s] ()
-2025-07-18 14:47:07,021 [INFO] ROLLBACK
-2025-07-18 14:47:29,229 [INFO] BEGIN (implicit)
-2025-07-18 14:47:29,230 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:47:29,231 [INFO] [cached since 51.89s ago] ('shamil@gmail.com',)
-2025-07-18 14:47:29,754 [INFO] INSERT INTO users (username, email, hashed_password, is_active, role) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, $5::VARCHAR) RETURNING users.id, users.created_at
-2025-07-18 14:47:29,757 [INFO] [cached since 51.96s ago] ('shamil', 'shamil@gmail.com', '$2b$12$shjMwWoTHyytNTSRr2B/kefogV88DbLKe5MWxlGip05iewjvIHWIS', True, 'user')
-2025-07-18 14:47:29,765 [INFO] COMMIT
-2025-07-18 14:47:29,769 [INFO] BEGIN (implicit)
-2025-07-18 14:47:29,773 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.id = $1::INTEGER
-2025-07-18 14:47:29,777 [INFO] [cached since 51.94s ago] (2,)
-2025-07-18 14:47:29,785 [INFO] User created: shamil@gmail.com
-2025-07-18 14:47:29,789 [INFO] ROLLBACK
-2025-07-18 14:47:34,804 [INFO] BEGIN (implicit)
-2025-07-18 14:47:34,806 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users
-2025-07-18 14:47:34,807 [INFO] [cached since 27.79s ago] ()
-2025-07-18 14:47:34,811 [INFO] ROLLBACK
-2025-07-18 14:48:54,127 [INFO] BEGIN (implicit)
-2025-07-18 14:48:54,129 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:48:54,131 [INFO] [cached since 136.8s ago] ('shahan',)
-2025-07-18 14:48:54,132 [INFO] ROLLBACK
-2025-07-18 14:50:56,313 [INFO] BEGIN (implicit)
-2025-07-18 14:50:56,317 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:50:56,318 [INFO] [cached since 259s ago] ('shahan@gmail.com',)
-2025-07-18 14:50:56,321 [INFO] ROLLBACK
-2025-07-18 14:51:38,311 [INFO] select pg_catalog.version()
-2025-07-18 14:51:38,312 [INFO] [raw sql] ()
-2025-07-18 14:51:38,315 [INFO] select current_schema()
-2025-07-18 14:51:38,316 [INFO] [raw sql] ()
-2025-07-18 14:51:38,318 [INFO] show standard_conforming_strings
-2025-07-18 14:51:38,319 [INFO] [raw sql] ()
-2025-07-18 14:51:38,320 [INFO] BEGIN (implicit)
-2025-07-18 14:51:38,332 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:51:38,333 [INFO] [generated in 0.00161s] ('shahan@gmail.com',)
-2025-07-18 14:51:38,339 [INFO] ROLLBACK
-2025-07-18 14:52:05,368 [INFO] select pg_catalog.version()
-2025-07-18 14:52:05,368 [INFO] [raw sql] ()
-2025-07-18 14:52:05,373 [INFO] select current_schema()
-2025-07-18 14:52:05,374 [INFO] [raw sql] ()
-2025-07-18 14:52:05,379 [INFO] show standard_conforming_strings
-2025-07-18 14:52:05,380 [INFO] [raw sql] ()
-2025-07-18 14:52:05,382 [INFO] BEGIN (implicit)
-2025-07-18 14:52:05,390 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:52:05,394 [INFO] [generated in 0.00359s] ('shahan@gmail.com',)
-2025-07-18 14:52:05,402 [INFO] ROLLBACK
-2025-07-18 14:52:31,549 [INFO] select pg_catalog.version()
-2025-07-18 14:52:31,550 [INFO] [raw sql] ()
-2025-07-18 14:52:31,553 [INFO] select current_schema()
-2025-07-18 14:52:31,556 [INFO] [raw sql] ()
-2025-07-18 14:52:31,560 [INFO] show standard_conforming_strings
-2025-07-18 14:52:31,562 [INFO] [raw sql] ()
-2025-07-18 14:52:31,564 [INFO] BEGIN (implicit)
-2025-07-18 14:52:31,575 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:52:31,580 [INFO] [generated in 0.00459s] ('shahan@gmail.com',)
-2025-07-18 14:52:31,591 [INFO] ROLLBACK
-2025-07-18 14:53:03,579 [INFO] select pg_catalog.version()
-2025-07-18 14:53:03,580 [INFO] [raw sql] ()
-2025-07-18 14:53:03,582 [INFO] select current_schema()
-2025-07-18 14:53:03,583 [INFO] [raw sql] ()
-2025-07-18 14:53:03,586 [INFO] show standard_conforming_strings
-2025-07-18 14:53:03,586 [INFO] [raw sql] ()
-2025-07-18 14:53:03,591 [INFO] BEGIN (implicit)
-2025-07-18 14:53:03,598 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:53:03,680 [INFO] [generated in 0.08240s] ('shan@gmail.com',)
-2025-07-18 14:53:03,788 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 14:53:04,628 [INFO] ROLLBACK
-2025-07-18 14:53:51,598 [INFO] BEGIN (implicit)
-2025-07-18 14:53:51,607 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:53:51,674 [INFO] [cached since 48.08s ago] ('shamil@gmai.com',)
-2025-07-18 14:53:51,807 [INFO] ROLLBACK
-2025-07-18 14:54:00,557 [INFO] BEGIN (implicit)
-2025-07-18 14:54:00,560 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 14:54:00,565 [INFO] [cached since 56.97s ago] ('shamil@gmail.com',)
-2025-07-18 14:54:01,042 [INFO] ROLLBACK
-2025-07-18 17:41:35,468 [INFO] BEGIN (implicit)
-2025-07-18 17:41:35,511 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:41:35,519 [INFO] [cached since 1.011e+04s ago] ('shamil@gmail.com',)
-2025-07-18 17:41:36,175 [INFO] ROLLBACK
-2025-07-18 17:41:41,468 [INFO] BEGIN (implicit)
-2025-07-18 17:41:41,470 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:41:41,472 [INFO] [cached since 1.012e+04s ago] ('shan@gmail.com',)
-2025-07-18 17:41:42,049 [INFO] ROLLBACK
-2025-07-18 17:44:06,937 [INFO] BEGIN (implicit)
-2025-07-18 17:44:06,939 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:44:06,941 [INFO] [cached since 1.026e+04s ago] ('shan@gmail.com',)
-2025-07-18 17:44:07,464 [INFO] ROLLBACK
-2025-07-18 17:47:08,605 [INFO] BEGIN (implicit)
-2025-07-18 17:47:08,607 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:47:08,608 [INFO] [cached since 1.045e+04s ago] ('shamil@gmail.com',)
-2025-07-18 17:47:09,120 [INFO] ROLLBACK
-2025-07-18 17:48:04,913 [INFO] BEGIN (implicit)
-2025-07-18 17:48:04,915 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:48:04,918 [INFO] [cached since 1.05e+04s ago] ('shan@gmail.com',)
-2025-07-18 17:48:05,587 [INFO] ROLLBACK
-2025-07-18 17:49:56,956 [INFO] BEGIN (implicit)
-2025-07-18 17:49:56,958 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 17:49:56,969 [INFO] [cached since 1.061e+04s ago] ('shamil@gmail.com',)
-2025-07-18 17:49:57,624 [INFO] ROLLBACK
-2025-07-18 18:15:49,630 [INFO] BEGIN (implicit)
-2025-07-18 18:15:49,638 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 18:15:49,639 [INFO] [cached since 1.217e+04s ago] ('shamil@gmail.com',)
-2025-07-18 18:15:49,972 [INFO] ROLLBACK
-2025-07-18 19:32:30,777 [INFO] select pg_catalog.version()
-2025-07-18 19:32:30,784 [INFO] [raw sql] ()
-2025-07-18 19:32:30,796 [INFO] select current_schema()
-2025-07-18 19:32:30,796 [INFO] [raw sql] ()
-2025-07-18 19:32:30,802 [INFO] show standard_conforming_strings
-2025-07-18 19:32:30,803 [INFO] [raw sql] ()
-2025-07-18 19:32:30,807 [INFO] BEGIN (implicit)
-2025-07-18 19:32:30,834 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
-FROM users 
-WHERE users.email = $1::VARCHAR
-2025-07-18 19:32:30,835 [INFO] [generated in 0.00156s] ('shamil@gmail.com',)
-2025-07-18 19:32:30,851 [WARNING] (trapped) error reading bcrypt version
-Traceback (most recent call last):
-  File "F:\BROTOTYPE WEEK TASKS\WEEK 39\Project 31 - Clothing Store with Microservices\clothenv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
-    version = _bcrypt.__about__.__version__
-              ^^^^^^^^^^^^^^^^^
-AttributeError: module 'bcrypt' has no attribute '__about__'
-2025-07-18 19:32:31,315 [INFO] ROLLBACK
-2025-07-18 20:05:50,375 [INFO] select pg_catalog.version()
-2025-07-18 20:05:50,386 [INFO] [raw sql] ()
-2025-07-18 20:05:50,403 [INFO] select current_schema()
-2025-07-18 20:05:50,407 [INFO] [raw sql] ()
-2025-07-18 20:05:50,411 [INFO] show standard_conforming_strings
-2025-07-18 20:05:50,420 [INFO] [raw sql] ()
-2025-07-18 20:05:50,423 [INFO] BEGIN (implicit)
-2025-07-18 20:05:50,431 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+2025-07-19 12:12:35,758 [INFO] [cached since 8.424s ago] ('shamil@gmail.com',)
+2025-07-19 12:12:36,251 [INFO] ROLLBACK
+2025-07-19 12:18:24,339 [INFO] BEGIN (implicit)
+2025-07-19 12:18:24,339 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
 FROM users 
 WHERE false
-2025-07-18 20:05:50,441 [INFO] [generated in 0.01025s] ()
-2025-07-18 20:05:50,461 [INFO] ROLLBACK
+2025-07-19 12:18:24,348 [INFO] [generated in 0.00165s] ()
+2025-07-19 12:18:24,349 [INFO] ROLLBACK
+2025-07-19 12:18:27,143 [INFO] BEGIN (implicit)
+2025-07-19 12:18:27,144 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE false
+2025-07-19 12:18:27,145 [INFO] [cached since 2.798s ago] ()
+2025-07-19 12:18:27,147 [INFO] ROLLBACK
+2025-07-19 12:18:29,918 [INFO] BEGIN (implicit)
+2025-07-19 12:18:29,926 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE false
+2025-07-19 12:18:29,926 [INFO] [cached since 5.581s ago] ()
+2025-07-19 12:18:29,926 [INFO] ROLLBACK
+2025-07-19 12:20:13,440 [INFO] BEGIN (implicit)
+2025-07-19 12:20:13,440 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users
+2025-07-19 12:20:13,440 [INFO] [generated in 0.00159s] ()
+2025-07-19 12:20:13,464 [INFO] ROLLBACK
+2025-07-19 12:20:20,816 [INFO] BEGIN (implicit)
+2025-07-19 12:20:20,818 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE false
+2025-07-19 12:20:20,820 [INFO] [cached since 116.5s ago] ()
+2025-07-19 12:20:20,823 [INFO] ROLLBACK
+2025-07-19 12:21:53,128 [INFO] select pg_catalog.version()
+2025-07-19 12:21:53,129 [INFO] [raw sql] ()
+2025-07-19 12:21:53,134 [INFO] select current_schema()
+2025-07-19 12:21:53,135 [INFO] [raw sql] ()
+2025-07-19 12:21:53,138 [INFO] show standard_conforming_strings
+2025-07-19 12:21:53,139 [INFO] [raw sql] ()
+2025-07-19 12:21:53,141 [INFO] BEGIN (implicit)
+2025-07-19 12:21:53,157 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 12:21:53,259 [INFO] [generated in 0.10176s] (1,)
+2025-07-19 12:21:53,367 [INFO] ROLLBACK
+2025-07-19 12:24:25,792 [INFO] select pg_catalog.version()
+2025-07-19 12:24:25,793 [INFO] [raw sql] ()
+2025-07-19 12:24:25,797 [INFO] select current_schema()
+2025-07-19 12:24:25,800 [INFO] [raw sql] ()
+2025-07-19 12:24:25,803 [INFO] show standard_conforming_strings
+2025-07-19 12:24:25,804 [INFO] [raw sql] ()
+2025-07-19 12:24:25,807 [INFO] BEGIN (implicit)
+2025-07-19 12:24:25,816 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 12:24:25,922 [INFO] [generated in 0.10554s] (1,)
+2025-07-19 12:24:26,011 [INFO] ROLLBACK
+2025-07-19 12:24:38,341 [INFO] BEGIN (implicit)
+2025-07-19 12:24:38,343 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 12:24:38,352 [INFO] [cached since 12.54s ago] (2,)
+2025-07-19 12:24:38,359 [INFO] ROLLBACK
+2025-07-19 12:26:18,731 [INFO] BEGIN (implicit)
+2025-07-19 12:26:18,740 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 12:26:18,740 [INFO] [generated in 0.00137s] ('shan@gmail.com',)
+2025-07-19 12:26:19,258 [INFO] ROLLBACK
+2025-07-19 12:38:09,723 [INFO] BEGIN (implicit)
+2025-07-19 12:38:09,733 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 12:38:09,765 [INFO] [cached since 711s ago] ('shaheer@gmail.com',)
+2025-07-19 12:38:10,217 [INFO] INSERT INTO users (username, email, hashed_password, is_active, role) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::BOOLEAN, $5::VARCHAR) RETURNING users.id, users.created_at
+2025-07-19 12:38:10,218 [INFO] [generated in 0.00131s] ('shaheer', 'shaheer@gmail.com', '$2b$12$qliTq9qf/6a4B0M05AzwbeZ99TA7Uky6wQ2moEAKyi5Pmrmn0Mfh2', True, 'user')
+2025-07-19 12:38:10,248 [INFO] COMMIT
+2025-07-19 12:38:10,254 [INFO] BEGIN (implicit)
+2025-07-19 12:38:10,257 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 12:38:10,258 [INFO] [generated in 0.00153s] (3,)
+2025-07-19 12:38:10,267 [INFO] User created: shaheer@gmail.com
+2025-07-19 12:38:10,269 [INFO] ROLLBACK
+2025-07-19 12:38:34,902 [INFO] BEGIN (implicit)
+2025-07-19 12:38:34,902 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users
+2025-07-19 12:38:34,902 [INFO] [generated in 0.00102s] ()
+2025-07-19 12:38:34,902 [INFO] ROLLBACK
+2025-07-19 12:38:49,802 [INFO] BEGIN (implicit)
+2025-07-19 12:38:49,802 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users
+2025-07-19 12:38:49,802 [INFO] [cached since 14.9s ago] ()
+2025-07-19 12:38:49,811 [INFO] ROLLBACK
+2025-07-19 12:40:38,613 [INFO] BEGIN (implicit)
+2025-07-19 12:40:38,613 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 12:40:38,613 [INFO] [cached since 859.9s ago] ('shaheer@gmail.com',)
+2025-07-19 12:40:39,123 [INFO] ROLLBACK
+2025-07-19 12:49:57,185 [INFO] BEGIN (implicit)
+2025-07-19 12:49:57,193 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 12:49:57,194 [INFO] [cached since 1418s ago] ('shamil@gmail.com',)
+2025-07-19 12:49:57,939 [INFO] ROLLBACK
+2025-07-19 17:44:53,547 [INFO] BEGIN (implicit)
+2025-07-19 17:44:53,915 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 17:44:53,918 [INFO] [cached since 1.912e+04s ago] ('shamil@gmail.com',)
+2025-07-19 17:44:54,286 [INFO] ROLLBACK
+2025-07-19 18:00:39,426 [INFO] BEGIN (implicit)
+2025-07-19 18:00:39,436 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 18:00:39,438 [INFO] [cached since 2.006e+04s ago] ('shaheer@gmail.com',)
+2025-07-19 18:00:39,761 [INFO] ROLLBACK
+2025-07-19 18:02:48,747 [INFO] BEGIN (implicit)
+2025-07-19 18:02:48,750 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 18:02:48,752 [INFO] [cached since 2.03e+04s ago] (2,)
+2025-07-19 18:02:48,871 [INFO] ROLLBACK
+2025-07-19 18:16:20,517 [INFO] BEGIN (implicit)
+2025-07-19 18:16:20,537 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 18:16:20,545 [INFO] [cached since 2.1e+04s ago] ('shamil@gmail.com',)
+2025-07-19 18:16:20,976 [INFO] ROLLBACK
+2025-07-19 18:37:43,334 [INFO] BEGIN (implicit)
+2025-07-19 18:37:43,348 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 18:37:43,349 [INFO] [cached since 2.24e+04s ago] (2,)
+2025-07-19 18:37:43,370 [INFO] ROLLBACK
+2025-07-19 18:38:09,519 [INFO] BEGIN (implicit)
+2025-07-19 18:38:09,520 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 18:38:09,521 [INFO] [cached since 2.242e+04s ago] (2,)
+2025-07-19 18:38:09,523 [INFO] ROLLBACK
+2025-07-19 18:38:58,983 [INFO] BEGIN (implicit)
+2025-07-19 18:38:58,986 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 18:38:58,987 [INFO] [cached since 2.236e+04s ago] ('shan@gmail.com',)
+2025-07-19 18:38:59,330 [INFO] ROLLBACK
+2025-07-19 19:10:47,477 [INFO] BEGIN (implicit)
+2025-07-19 19:10:47,500 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 19:10:47,503 [INFO] [cached since 2.427e+04s ago] ('shan@gmail.com',)
+2025-07-19 19:10:47,884 [INFO] ROLLBACK
+2025-07-19 19:31:42,807 [INFO] select pg_catalog.version()
+2025-07-19 19:31:42,809 [INFO] [raw sql] ()
+2025-07-19 19:31:42,815 [INFO] select current_schema()
+2025-07-19 19:31:42,816 [INFO] [raw sql] ()
+2025-07-19 19:31:42,819 [INFO] show standard_conforming_strings
+2025-07-19 19:31:42,819 [INFO] [raw sql] ()
+2025-07-19 19:31:42,821 [INFO] BEGIN (implicit)
+2025-07-19 19:31:42,833 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 19:31:42,834 [INFO] [generated in 0.00138s] ('shan@gmail.com',)
+2025-07-19 19:31:43,301 [INFO] ROLLBACK
+2025-07-19 19:35:45,924 [INFO] BEGIN (implicit)
+2025-07-19 19:35:45,925 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 19:35:45,928 [INFO] [cached since 243.1s ago] ('shan@gmail.com',)
+2025-07-19 19:35:45,931 [INFO] ROLLBACK
+2025-07-19 20:02:34,629 [INFO] BEGIN (implicit)
+2025-07-19 20:02:34,631 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:02:34,633 [INFO] [cached since 1852s ago] ('shamil@gmail.com',)
+2025-07-19 20:02:35,208 [INFO] ROLLBACK
+2025-07-19 20:05:41,379 [INFO] BEGIN (implicit)
+2025-07-19 20:05:41,382 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:05:41,385 [INFO] [cached since 2039s ago] ('shan@gmail.com',)
+2025-07-19 20:05:41,860 [INFO] ROLLBACK
+2025-07-19 20:15:59,939 [INFO] select pg_catalog.version()
+2025-07-19 20:15:59,939 [INFO] [raw sql] ()
+2025-07-19 20:15:59,948 [INFO] select current_schema()
+2025-07-19 20:15:59,956 [INFO] [raw sql] ()
+2025-07-19 20:15:59,957 [INFO] show standard_conforming_strings
+2025-07-19 20:15:59,957 [INFO] [raw sql] ()
+2025-07-19 20:15:59,965 [INFO] BEGIN (implicit)
+2025-07-19 20:15:59,974 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:15:59,974 [INFO] [generated in 0.00178s] ('shan@gmail.com',)
+2025-07-19 20:16:00,533 [INFO] ROLLBACK
+2025-07-19 20:19:37,283 [INFO] select pg_catalog.version()
+2025-07-19 20:19:37,283 [INFO] [raw sql] ()
+2025-07-19 20:19:37,283 [INFO] select current_schema()
+2025-07-19 20:19:37,283 [INFO] [raw sql] ()
+2025-07-19 20:19:37,291 [INFO] show standard_conforming_strings
+2025-07-19 20:19:37,291 [INFO] [raw sql] ()
+2025-07-19 20:19:37,302 [INFO] BEGIN (implicit)
+2025-07-19 20:19:37,310 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:19:37,316 [INFO] [generated in 0.00504s] ('shan@gmail.com',)
+2025-07-19 20:19:37,491 [INFO] ROLLBACK
+2025-07-19 20:20:11,330 [INFO] BEGIN (implicit)
+2025-07-19 20:20:11,338 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:20:11,338 [INFO] [cached since 34.03s ago] ('shaheer@gmail.com',)
+2025-07-19 20:20:11,843 [INFO] ROLLBACK
+2025-07-19 20:20:24,749 [INFO] BEGIN (implicit)
+2025-07-19 20:20:24,750 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:20:24,752 [INFO] [cached since 47.44s ago] ('shaheer@gmail.com',)
+2025-07-19 20:20:24,757 [INFO] ROLLBACK
+2025-07-19 20:20:38,109 [INFO] BEGIN (implicit)
+2025-07-19 20:20:38,111 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users
+2025-07-19 20:20:38,113 [INFO] [generated in 0.00206s] ()
+2025-07-19 20:20:38,117 [INFO] ROLLBACK
+2025-07-19 20:21:07,022 [INFO] select pg_catalog.version()
+2025-07-19 20:21:07,023 [INFO] [raw sql] ()
+2025-07-19 20:21:07,026 [INFO] select current_schema()
+2025-07-19 20:21:07,026 [INFO] [raw sql] ()
+2025-07-19 20:21:07,028 [INFO] show standard_conforming_strings
+2025-07-19 20:21:07,029 [INFO] [raw sql] ()
+2025-07-19 20:21:07,031 [INFO] BEGIN (implicit)
+2025-07-19 20:21:07,039 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.id = $1::INTEGER
+2025-07-19 20:21:07,040 [INFO] [generated in 0.00134s] (1,)
+2025-07-19 20:21:07,055 [INFO] ROLLBACK
+2025-07-19 20:25:54,641 [INFO] select pg_catalog.version()
+2025-07-19 20:25:54,659 [INFO] [raw sql] ()
+2025-07-19 20:25:54,673 [INFO] select current_schema()
+2025-07-19 20:25:54,673 [INFO] [raw sql] ()
+2025-07-19 20:25:54,677 [INFO] show standard_conforming_strings
+2025-07-19 20:25:54,677 [INFO] [raw sql] ()
+2025-07-19 20:25:54,685 [INFO] BEGIN (implicit)
+2025-07-19 20:25:54,692 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:25:54,700 [INFO] [generated in 0.00287s] ('shaheer@gmail.com',)
+2025-07-19 20:25:54,725 [INFO] ROLLBACK
+2025-07-19 20:26:01,560 [INFO] BEGIN (implicit)
+2025-07-19 20:26:01,561 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:26:01,564 [INFO] [cached since 6.865s ago] ('shaheer@gmail.com',)
+2025-07-19 20:26:01,566 [INFO] ROLLBACK
+2025-07-19 20:29:36,300 [INFO] select pg_catalog.version()
+2025-07-19 20:29:36,301 [INFO] [raw sql] ()
+2025-07-19 20:29:36,304 [INFO] select current_schema()
+2025-07-19 20:29:36,305 [INFO] [raw sql] ()
+2025-07-19 20:29:36,307 [INFO] show standard_conforming_strings
+2025-07-19 20:29:36,308 [INFO] [raw sql] ()
+2025-07-19 20:29:36,312 [INFO] BEGIN (implicit)
+2025-07-19 20:29:36,324 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:29:36,325 [INFO] [generated in 0.00137s] ('shaheer@gmail.com',)
+2025-07-19 20:29:36,337 [INFO] ROLLBACK
+2025-07-19 20:29:46,439 [INFO] select pg_catalog.version()
+2025-07-19 20:29:46,439 [INFO] [raw sql] ()
+2025-07-19 20:29:46,442 [INFO] select current_schema()
+2025-07-19 20:29:46,443 [INFO] [raw sql] ()
+2025-07-19 20:29:46,447 [INFO] show standard_conforming_strings
+2025-07-19 20:29:46,451 [INFO] [raw sql] ()
+2025-07-19 20:29:46,454 [INFO] BEGIN (implicit)
+2025-07-19 20:29:46,459 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:29:46,469 [INFO] [generated in 0.01016s] ('shaheer@gmail.com',)
+2025-07-19 20:29:46,486 [INFO] ROLLBACK
+2025-07-19 20:29:56,980 [INFO] BEGIN (implicit)
+2025-07-19 20:29:56,982 [INFO] SELECT users.id, users.username, users.email, users.hashed_password, users.is_active, users.role, users.created_at 
+FROM users 
+WHERE users.email = $1::VARCHAR
+2025-07-19 20:29:56,984 [INFO] [cached since 10.52s ago] ('shaheer@gmail.com',)
+2025-07-19 20:29:56,990 [INFO] ROLLBACK

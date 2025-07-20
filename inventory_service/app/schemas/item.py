@@ -16,9 +16,12 @@ class ItemUpdate(BaseModel):
     quantity: int | None = None
     price: float | None = None
     
+class QuantityUpdate(BaseModel):
+    qty: int
     
 class ItemOut(ItemBase):
     id: int
     
     class Config:
         orm_mode = True
+        

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import List
 
-from app.schemas.item import ItemCreate, ItemUpdate, ItemOut
+from app.schemas.item import ItemCreate, ItemUpdate, ItemOut, QuantityUpdate
 from app.crud.item import (
     create_item, get_all_items, get_item_by_id,
     update_item, delete_item
@@ -108,3 +108,24 @@ async def delete_existing_item(
     except Exception as e:
         REQUEST_COUNT.labels(method="delete", path="items/{id}", status_code="500").inc()
         raise e
+
+
+@router.put("/{item_id}/decrease")
+async def decrease_quantity(item_id: int, data: QuantityUpdate, db: AsyncSession = Depends(get_db)):
+    item = await get_item_by_id(db, item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    if item.quantity < data.qty:
+        raise HTTPException(status_code=400, detail="Out of Stock")
+    item.quantity -= data.qty
+    await db.commit()
+    return {"message": "Quantity decreased", "remaining": item.quantity}
+    
+@router.put("/{item_id}/increase")
+async def increase_quantity(item_id: int, data: QuantityUpdate, db: AsyncSession = Depends(get_db)):
+    item = await get_item_by_id(db, item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    item.quantity += data.qty
+    await db.commit()
+    return {"message": "Quantity increased", "current": item.quantity}

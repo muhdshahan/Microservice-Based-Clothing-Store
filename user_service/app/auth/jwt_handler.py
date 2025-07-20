@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 print(OAuth2PasswordBearer.__module__)
-
+ 
 
 SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
@@ -32,11 +32,10 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: AsyncSession
         if email is None or role is None:
             raise credentials_exception
     except JWTError:
-        raise credentials_exception
+        raise credentials_exception 
     user = await get_user_by_email(db, email=email)
     if user is None:
         raise credentials_exception
-    # user.role = role
     return user
 
 def create_access_token(data: dict):

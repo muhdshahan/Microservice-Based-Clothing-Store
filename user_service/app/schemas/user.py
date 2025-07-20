@@ -4,6 +4,7 @@ from datetime import datetime
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+    role : str = "user"  # default role
 
 class UserBase(BaseModel):
     username: str
@@ -15,6 +16,7 @@ class UserCreate(UserBase):
     
 class UserOut(UserBase):
     id: int 
+    role : str
     is_active: bool
     created_at: datetime
     
