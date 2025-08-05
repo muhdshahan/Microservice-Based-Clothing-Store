@@ -9,7 +9,7 @@ async def create_item(db: AsyncSession, item: ItemCreate):
     await db.commit()
     await db.refresh(new_item)
     return new_item
-
+ 
 async def get_all_items(db: AsyncSession):
     result = await db.execute(select(Item))
     return result.scalars().all()
